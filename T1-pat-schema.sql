@@ -23,7 +23,7 @@ CREATE TABLE official (
     off_given   VARCHAR(30),
     off_family  VARCHAR(30),
     cr_IOC_CODE CHAR(3) NOT NULL,
-    odd_cdm     NUMERIC(4) NOT NULL
+    odd_cdm     NUMERIC(4)
 );
 
 COMMENT ON COLUMN offical.off_id IS
@@ -80,9 +80,9 @@ CREATE TABLE trip (
     trip_id            NUMERIC(4) NOT NULL,
     trip_nopassengers  NUMERIC(2) NOT NULL,
     trip_int_pickupdt  Date NOT NULL,
-    trip_act_pickupdt  Date NOT NULL,
+    trip_act_pickupdt  Date,
     trip_int_dropoffdt Date NOT NULL,
-    trip_act_dropoffdt Date NOT NULL,
+    trip_act_dropoffdt Date,
     veh_vin            CHAR(17) NOT NULL,
     driver_id          NUMERIC(4) NOT NULL,
     pickup_locn_id     NUMERIC(3) NOT NULL,

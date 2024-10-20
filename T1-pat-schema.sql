@@ -130,3 +130,39 @@ COMMENT ON COLUMN trip.off_id IS
 ALTER TABLE trip ADD CONSTRAINT trip_pk PRIMARY KEY ( trip_id );
 
 -- Add all missing FK Constraints below here
+
+ALTER TABLE official
+    ADD CONSTRAINT county_region_official_fk FOREIGN KEY ( cr_ioc_code )
+        REFERENCES county_region ( cr_ioc_code );
+
+ALTER TABLE official
+    ADD CONSTRAINT official_official_fk FOREIGN KEY ( off_cdm )
+        REFERENCES official ( off_id );
+
+ALTER TABLE vehicle
+    ADD CONSTRAINT vehicle_modle_vehicle_fk FOREIGN KEY ( vm_model_id )
+        REFERENCES vehicle_modle ( vm_model_id );
+
+ALTER TABLE trip
+    ADD CONSTRAINT vehicle_trip_fk FOREIGN KEY ( veh_vin )
+        REFERENCES vehicle ( veh_vin );
+
+ALTER TABLE trip
+    ADD CONSTRAINT driver_trip_fk FOREIGN KEY ( driver_id )
+        REFERENCES driver ( driver_id );
+
+ALTER TABLE trip
+    ADD CONSTRAINT pickup_loc_trip_fk FOREIGN KEY ( pickup_locn_id )
+        REFERENCES location ( locn_id );
+
+ALTER TABLE trip
+    ADD CONSTRAINT dropoff_loc_trip_fk FOREIGN KEY ( dropoff_locn_id )
+        REFERENCES location ( locn_id );
+
+ALTER TABLE trip
+    ADD CONSTRAINT language_trip_fk FOREIGN KEY ( lang_iso_code )
+        REFERENCES language ( lang_iso_code );
+
+ALTER TABLE trip
+    ADD CONSTRAINT official_trip_fk FOREIGN KEY ( off_id )
+        REFERENCES official ( off_id );

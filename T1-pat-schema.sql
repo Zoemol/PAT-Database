@@ -20,10 +20,10 @@
 
 CREATE TABLE official (
     off_id      NUMERIC(4) NOT NULL,
-    off_given   VARCHAR(30),
-    off_family  VARCHAR(30),
+    off_given   VARCHAR2(30),
+    off_family  VARCHAR2(30),
     cr_IOC_CODE CHAR(3) NOT NULL,
-    odd_cdm     NUMERIC(4)
+    off_cdm     NUMERIC(4)
 );
 
 COMMENT ON COLUMN offical.off_id IS

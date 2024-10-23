@@ -39,9 +39,9 @@ INSERT INTO official (
     off_cdm
 ) VALUES (
     999,
-    "Franklin",
-    "Gateau",
-    "VIN",  -- St Vincent and The Grenadines
+    'Franklin',
+    'Gateau',
+    'VIN',  -- St Vincent and The Grenadines
     Null    -- CDM of the team
 );
 
@@ -63,8 +63,8 @@ INSERT INTO vehicle (
     veh_nopassengers,
     vm_mode_id
 ) VALUES (
-    "1C4SDHCT9FC614231",
-    "EFB324N",
+    '1C4SDHCT9FC614231',
+    'EFB324N',
     TO_DATE('2017', 'YYYY'),
     904,
     6,
@@ -94,7 +94,7 @@ INSERT ALL
         NULL,
         TO_DATE('30 July 2024 14:00 PM', 'DD Month YYYY HH:MI PM'),
         NULL,
-        "1C4SDHCT9FC614231",
+        '1C4SDHCT9FC614231',
         2014,  -- Claire Robert
         113,   -- Olympic and Paralympic Village
         111,   -- Porte de la Chapelle Arena
@@ -122,7 +122,7 @@ INSERT ALL
         NULL,
         TO_DATE('30 July 2024 9:15 PM', 'DD Month YYYY HH:MI PM'),
         NULL,
-        "1C4SDHCT9FC614231",
+        '1C4SDHCT9FC614231',
         2014,  -- Claire Robert
         111,   -- Olympic and Paralympic Village
         113,   -- Porte de la Chapelle Arena

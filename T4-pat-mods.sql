@@ -79,7 +79,7 @@ CREATE TABLE complaint_category (
 COMMENT ON COLUMN complaint_category.category_id IS
     'Id of the complaint category';
 
-COMMENT ON COLUMN complaint_category.category_value IS
+COMMENT ON COLUMN complaint_category.category_name IS
     'The name of the category';
 
 COMMENT ON COLUMN complaint_category.demerit_point IS

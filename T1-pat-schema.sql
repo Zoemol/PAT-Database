@@ -39,7 +39,7 @@ COMMENT ON COLUMN offical.cr_ios_code IS
     'IOC country code for the official';
 
 COMMENT ON COLUMN official.off_cdm IS
-    'Identifier for Chef De Mission for the official'
+    'Identifier for Chef De Mission for the official';
 
 ALTER TABLE official ADD CONSTRAINT official_pk PRIMARY KEY ( off_id );
 

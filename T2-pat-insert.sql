@@ -733,9 +733,9 @@ INSERT INTO trip (
     15, 
     2,
     TO_DATE('04-AUG-2024 10:30', 'DD-MON-YYYY HH24:MI'),
-    NULL
+    NULL,
     TO_DATE('04-AUG-2024 11:30', 'DD-MON-YYYY HH24:MI'),
-    NULL
+    NULL,
     '1C4RJFBG3EC123456',
     2013,
     105,
@@ -761,9 +761,9 @@ INSERT INTO trip (
     16, 
     3,
     TO_DATE('05-AUG-2024 13:10', 'DD-MON-YYYY HH24:MI'),
-    NULL
+    NULL,
     TO_DATE('05-AUG-2024 14:30', 'DD-MON-YYYY HH24:MI'),
-    NULL
+    NULL,
     '4T1BF1FK5EU123456',
     2010,
     102,

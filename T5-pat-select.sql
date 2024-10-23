@@ -50,7 +50,15 @@ ORDER BY
 
 SELECT 
     driver_id,
-    d.driver_given || ' ' || d.driver_family AS FULLNAME,
+    CASE
+        WHEN d.driver_given IS NOT NULL AND d.driver_family IS NOT NULL 
+        THEN d.driver_given || ' ' || d.driver_family  -- Add space when both names exist
+        WHEN d.driver_given IS NOT NULL 
+        THEN d.driver_given  -- Only first name exists
+        WHEN d.driver_family IS NOT NULL 
+        THEN d.driver_family  -- Only family name exists
+        ELSE ''  -- Neither name exists
+    END AS FULLNAME,
     CASE 
         WHEN SUM((t.trip_act_dropoffdt - t.trip_act_pickupdt) * 24) IS NULL 
         THEN 'No Trips' 

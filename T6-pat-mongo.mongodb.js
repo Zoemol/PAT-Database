@@ -24,20 +24,31 @@ use("xyz001");
 
 // Drop collection
 
+db.driverTrips.drop();
 
 // Create collection and insert documents
 
+db.driverTrips.insertMany([]);
 
 // List all documents you added
 
+db.driverTrips.find().pretty();
 
 // (c)
 // PLEASE PLACE REQUIRED MONGODB COMMAND/S FOR THIS PART HERE
 // ENSURE that your query is formatted and has a semicolon
 // (;) at the end of this answer
 
-
-
+db.driverTrips.find(
+    {
+        "trips_info.drop-off.location_name": { $in: ["Champions Park", "Porte de La Chapelle Arena"] }
+    },
+    {
+        _id: 0,
+        name: 1,
+        license_num: 1
+    }
+).pretty();
 
 // (d)
 // PLEASE PLACE REQUIRED MONGODB COMMAND/S FOR THIS PART HERE
@@ -46,10 +57,37 @@ use("xyz001");
 
 // Show document before the new trip is added and the driver is suspended
 
+db.driverTrips.find(
+    { _id: 2004 }
+).pretty();
 
 // Add new trip and set the driver to suspended
 
-
+db.driverTrips.updateOne(
+    { _id: 2004 },
+    {
+        $set: { suspended: 'Y' },
+        $push: { 
+            trips_info: {
+                'pick-up': {
+                    localtion_id: 117,
+                    location_name: "Tuileries Garden",
+                    intended_datetime: "10/08/2024 08:00",
+                    actual_datetime: "10/08/2024 08:00"
+                },
+                'drop-off': {
+                    localtion_id: 118,
+                    location_name: "Sainte-Chapelle",
+                    intended_datetime: "10/08/2024 10:00",
+                    actual_datetime: "10/08/2024 10:00"
+                }
+            }
+        }
+    }
+);
 
 // Illustrate/confirm changes made
 
+db.driverTrips.find(
+    { _id: 2004 }
+).pretty();

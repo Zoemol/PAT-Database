@@ -22,20 +22,20 @@ CREATE TABLE official (
     off_id      NUMERIC(4) NOT NULL,
     off_given   VARCHAR2(30),
     off_family  VARCHAR2(30),
-    cr_IOC_CODE CHAR(3) NOT NULL,
+    cr_ioc_code CHAR(3) NOT NULL,
     off_cdm     NUMERIC(4)
 );
 
-COMMENT ON COLUMN offical.off_id IS
+COMMENT ON COLUMN official.off_id IS
     'Identifier for an official';
 
-COMMENT ON COLUMN official.off_give IS
-    `Given name for the official`;
+COMMENT ON COLUMN official.off_given IS
+    'Given name for the official';
 
 COMMENT ON COLUMN official.off_family IS
     'Family name for the official';
 
-COMMENT ON COLUMN offical.cr_ios_code IS
+COMMENT ON COLUMN official.cr_ioc_code IS
     'IOC country code for the official';
 
 COMMENT ON COLUMN official.off_cdm IS
@@ -52,9 +52,9 @@ CREATE TABLE vehicle (
     veh_curr_odo     NUMERIC(6) NOT NULL,
     veh_nopassengers NUMERIC(2) NOT NULL,
     vm_mode_id       NUMERIC(4) NOT NULL
-)
+);
 
-COMMENT ON COLUMN vehicle.veh_cin IS
+COMMENT ON COLUMN vehicle.veh_vin IS
     'Identifier for vehicle';
 
 COMMENT ON COLUMN vehicle.veh_rego IS
@@ -140,7 +140,7 @@ ALTER TABLE official
         REFERENCES official ( off_id );
 
 ALTER TABLE vehicle
-    ADD CONSTRAINT vehicle_modle_vehicle_fk FOREIGN KEY ( vm_model_id )
+    ADD CONSTRAINT vehicle_model_vehicle_fk FOREIGN KEY ( vm_model_id )
         REFERENCES vehicle_modle ( vm_model_id );
 
 ALTER TABLE trip

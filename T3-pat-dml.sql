@@ -21,9 +21,9 @@ CREATE SEQUENCE off_id_seq
     NOCACHE
     NOCYCLE;
 
-DROP SEQUENCE veh_vin_seq;
+DROP SEQUENCE trip_id_seq;
 
-CREATE SEQUENCE veh_vin_seq
+CREATE SEQUENCE trip_id_seq
     START WITH 100
     INCREMENT BY 10
     NOCACHE
@@ -38,7 +38,7 @@ INSERT INTO official (
     cr_ioc_code,
     off_cdm
 ) VALUES (
-    999,
+    off_id_seq.NEXTVAL,
     'Franklin',
     'Gateau',
     'VIN',  -- St Vincent and The Grenadines
@@ -61,7 +61,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     '1C4SDHCT9FC614231',
     'EFB324N',
@@ -88,11 +88,11 @@ INSERT ALL
         lang_iso_code,
         off_id
     ) VALUES (
-        888,
+        trip_id_seq.NEXTVAL,
         1,
         TO_DATE('30 July 2024 12:30 PM', 'DD Month YYYY HH:MI PM'),
         NULL,
-        TO_DATE('30 July 2024 14:00 PM', 'DD Month YYYY HH:MI PM'),
+        TO_DATE('30 July 2024 02:00 PM', 'DD Month YYYY HH:MI PM'),
         NULL,
         '1C4SDHCT9FC614231',
         2014,  -- Claire Robert
@@ -116,7 +116,7 @@ INSERT ALL
         lang_iso_code,
         off_id
     ) VALUES (
-        889,
+        trip_id_seq.NEXTVAL,
         1,
         TO_DATE('30 July 2024 8:00 PM', 'DD Month YYYY HH:MI PM'),
         NULL,

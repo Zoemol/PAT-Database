@@ -64,7 +64,7 @@ ALTER TABLE trip_complaint
     ADD CONSTRAINT complaint_category_trip_complaint_fk FOREIGN KEY ( category_id )
         REFERENCES complaint_category ( category_id );
 
-ALTER TABLE trip_complaint ADD CONSTRAINT date_time_uq UNIQUE ( date_time );
+ALTER TABLE trip_complaint ADD CONSTRAINT date_time_uq UNIQUE ( trip_id, date_time );
 
 -- create a complaint category table to store possible categories and their demerit points
 

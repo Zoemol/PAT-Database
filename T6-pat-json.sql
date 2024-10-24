@@ -53,8 +53,8 @@ SELECT JSON_OBJECT (
 ) AS driver_trip_info
 FROM driver d
 JOIN trip t ON d.driver_id = t.driver_id
-JOIN "location" pl ON t.pickup_locn_id = pl.locn_id
-JOIN "location" dl ON t.dropoff_locn_id = dl.locn_id
+JOIN location pl ON t.pickup_locn_id = pl.locn_id
+JOIN location dl ON t.dropoff_locn_id = dl.locn_id
 WHERE t.trip_act_dropoffdt IS NOT NULL
 GROUP BY d.driver_id, d.driver_given, d.driver_family, d.driver_licence, d.driver_suspended
 ;

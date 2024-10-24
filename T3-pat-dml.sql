@@ -88,7 +88,7 @@ INSERT ALL
         lang_iso_code,
         off_id
     ) VALUES (
-        trip_id_seq.NEXTVAL,
+        100,
         1,
         TO_DATE('30 July 2024 12:30 PM', 'DD Month YYYY HH:MI PM'),
         NULL,
@@ -99,9 +99,8 @@ INSERT ALL
         113,   -- Olympic and Paralympic Village
         111,   -- Porte de la Chapelle Arena
         'en',  -- English
-        999    -- Franklin Gateau
+        100    -- Franklin Gateau
     )
-    
     INTO trip (
         trip_id,
         trip_nopassengers,
@@ -116,7 +115,7 @@ INSERT ALL
         lang_iso_code,
         off_id
     ) VALUES (
-        trip_id_seq.NEXTVAL,
+        110,
         1,
         TO_DATE('30 July 2024 8:00 PM', 'DD Month YYYY HH:MI PM'),
         NULL,
@@ -127,16 +126,16 @@ INSERT ALL
         111,   -- Olympic and Paralympic Village
         113,   -- Porte de la Chapelle Arena
         'en',  -- English
-        999    -- Franklin Gateau
+        100    -- Franklin Gateau
     )
-SELECT * from dual;
+SELECT * FROM dual;
 
 /*(d)*/
 
 UPDATE trip
 SET trip_act_pickupdt = TO_DATE('30 July 2024 12:30 PM', 'DD Month YYYY HH:MI PM'),
-    trip_act_dropoffdt = TO_DATE('30 July 2024 14:15 PM', 'DD Month YYYY HH:MI PM')
-WHERE trip_id = 888;
+    trip_act_dropoffdt = TO_DATE('30 July 2024 02:15 PM', 'DD Month YYYY HH:MI PM')
+WHERE trip_id = 100;
 
 DELETE FROM trip
 WHERE trip_act_dropoffdt IS NULL

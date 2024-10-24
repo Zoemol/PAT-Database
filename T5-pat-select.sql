@@ -49,7 +49,7 @@ ORDER BY
 -- (;) at the end of this answer
 
 SELECT 
-    driver_id,
+    d.driver_id AS DRIVER_ID,
     CASE
         WHEN d.driver_given IS NOT NULL AND d.driver_family IS NOT NULL 
         THEN d.driver_given || ' ' || d.driver_family  -- Add space when both names exist

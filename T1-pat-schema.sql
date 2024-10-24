@@ -51,7 +51,7 @@ CREATE TABLE vehicle (
     veh_year         Date NOT NULL,
     veh_curr_odo     NUMERIC(6) NOT NULL,
     veh_nopassengers NUMERIC(2) NOT NULL,
-    vm_mode_id       NUMERIC(4) NOT NULL
+    vm_model_id       NUMERIC(4) NOT NULL
 );
 
 COMMENT ON COLUMN vehicle.veh_vin IS
@@ -66,8 +66,8 @@ COMMENT ON COLUMN vehicle.veh_year IS
 COMMENT ON COLUMN vehicle.veh_curr_odo IS
     'Current odometer reading of vehicle';
 
-COMMENT ON COLUMN vehicle.nopassengers IS
-    'Number of passengers vehcle can seat';
+COMMENT ON COLUMN vehicle.veh_nopassengers IS
+    'Number of passengers vehicle can seat';
 
 COMMENT ON COLUMN vehicle.vm_model_id IS
     'Identifier for vehicle_model';
@@ -132,8 +132,8 @@ ALTER TABLE trip ADD CONSTRAINT trip_pk PRIMARY KEY ( trip_id );
 -- Add all missing FK Constraints below here
 
 ALTER TABLE official
-    ADD CONSTRAINT county_region_official_fk FOREIGN KEY ( cr_ioc_code )
-        REFERENCES county_region ( cr_ioc_code );
+    ADD CONSTRAINT country_region_official_fk FOREIGN KEY ( cr_ioc_code )
+        REFERENCES country_region ( cr_ioc_code );
 
 ALTER TABLE official
     ADD CONSTRAINT official_official_fk FOREIGN KEY ( off_cdm )
@@ -141,7 +141,7 @@ ALTER TABLE official
 
 ALTER TABLE vehicle
     ADD CONSTRAINT vehicle_model_vehicle_fk FOREIGN KEY ( vm_model_id )
-        REFERENCES vehicle_modle ( vm_model_id );
+        REFERENCES vehicle_model ( vm_model_id );
 
 ALTER TABLE trip
     ADD CONSTRAINT vehicle_trip_fk FOREIGN KEY ( veh_vin )

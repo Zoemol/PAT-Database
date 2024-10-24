@@ -18,8 +18,8 @@
 -- (;) at the end of this answer
 
 SELECT JSON_OBJECT (
-    '_id', d.driver_id,
-    'name', 
+    '_id' VALUE d.driver_id,
+    'name' VALUE  
         CASE 
             WHEN d.driver_given IS NOT NULL AND d.driver_family IS NOT NULL 
             THEN d.driver_given || ' ' || d.driver_family  -- Add space if both are present
@@ -29,24 +29,24 @@ SELECT JSON_OBJECT (
             THEN d.driver_family  -- Only family name exists
             ELSE ''  -- Neither name exists
         END,
-    'license_num', d.driver_licence,
-    'no_of_trips', COUNT(*),
-    'suspended', d.driver_suspended,
-    'trips_info', JSON_ARRAYAGG (
+    'license_num' VALUE d.driver_licence,
+    'no_of_trips' VALUE COUNT(*),
+    'suspended' VALUE d.driver_suspended,
+    'trips_info' VALUE JSON_ARRAYAGG (
         JSON_OBJECT (
-            'trip_id', t.trip_id,
-            'veh_vin', t.veh_vin,
-            'pick-up', JSON_OBJECT (
-                'localtion_id', pl.locn_id,
-                'location_name', pl.locn_name,
-                'intended_datetime', TO_CHAR(t.trip_int_pickupdt, 'DD/MM/YYYY HH24:MI'),
-                'actual_datetime', TO_CHAR(t.trip_act_pickupdt, 'DD/MM/YYYY HH24:MI') 
+            'trip_id' VALUE t.trip_id,
+            'veh_vin' VALUE t.veh_vin,
+            'pick-up' VALUE JSON_OBJECT (
+                'localtion_id' VALUE pl.locn_id,
+                'location_name' VALUE pl.locn_name,
+                'intended_datetime' VALUE TO_CHAR(t.trip_int_pickupdt, 'DD/MM/YYYY HH24:MI'),
+                'actual_datetime' VALUE TO_CHAR(t.trip_act_pickupdt, 'DD/MM/YYYY HH24:MI') 
             ),
-            'drop-off', JSON_OBJECT (
-                'localtion_id', dl.locn_id,
-                'location_name', dl.locn_name,
-                'intended_datetime', TO_CHAR(t.trip_int_dropoffdt, 'DD/MM/YYYY HH24:MI'),
-                'actual_datetime', TO_CHAR(t.trip_act_dropoffdt, 'DD/MM/YYYY HH24:MI') 
+            'drop-off' VALUE JSON_OBJECT (
+                'localtion_id' VALUE dl.locn_id,
+                'location_name' VALUE dl.locn_name,
+                'intended_datetime' VALUE TO_CHAR(t.trip_int_dropoffdt, 'DD/MM/YYYY HH24:MI'),
+                'actual_datetime' VALUE TO_CHAR(t.trip_act_dropoffdt, 'DD/MM/YYYY HH24:MI') 
             )
         )
     )

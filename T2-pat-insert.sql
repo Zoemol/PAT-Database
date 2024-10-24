@@ -165,7 +165,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     '1HGCM82633A123456',
     'ABC1234',
@@ -181,7 +181,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     '1FTRX18W03FB12345',
     'XYZ5678',
@@ -197,7 +197,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     '2FMDK3GC5EBA67890',
     '1A2B3C4',
@@ -213,7 +213,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     '3N1AB7AP8HY123456',
     'JKL9876',
@@ -229,7 +229,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     '5N1AR2MN9EC123456',
     'QRS4321',
@@ -245,7 +245,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     '1C4RJFBG3EC123456',
     '5D6E7F8',
@@ -261,7 +261,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     '4T1BF1FK5EU123456',
     'MNO2468',
@@ -277,7 +277,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     'JHMZC5F32CC123456',
     'PQR1357',
@@ -293,7 +293,7 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
     '1J4BA5H15AL123456',
     '9W8X7Y6',
@@ -309,9 +309,9 @@ INSERT INTO vehicle (
     veh_year,
     veh_curr_odo,
     veh_nopassengers,
-    vm_mode_id
+    vm_model_id
 ) VALUES (
-    '1J4BA5H15AL123456',
+    '1J4BAEKJ23FE23456',
     '9H0J8J6',
     TO_DATE('2022', 'YYYY'),
     12350,
@@ -512,7 +512,7 @@ INSERT INTO trip (
     TO_DATE('18-AUG-2024 17:30', 'DD-MON-YYYY HH24:MI'),
     TO_DATE('17-AUG-2024 15:30', 'DD-MON-YYYY HH24:MI'),
     TO_DATE('18-AUG-2024 18:30', 'DD-MON-YYYY HH24:MI'),
-    'WDBUF56JX6A123456',
+    '3N1AB7AP8HY123456',
     2012,
     110,
     102,
@@ -540,7 +540,7 @@ INSERT INTO trip (
     TO_DATE('13-AUG-2024 17:30', 'DD-MON-YYYY HH24:MI'),
     TO_DATE('13-AUG-2024 15:30', 'DD-MON-YYYY HH24:MI'),
     TO_DATE('13-AUG-2024 18:30', 'DD-MON-YYYY HH24:MI'),
-    'WDBUF56JX6A123456',
+    '3N1AB7AP8HY123456',
     2015,
     101,
     111,

@@ -422,24 +422,30 @@ db.driverTrips.find(
 db.driverTrips.updateOne(
     { _id: 2004 },
     {
-        $set: { suspended: 'Y' },
+        $set: {
+            name: 'Louis Dubois',
+            license_num: '45112B654321',
+            suspended: 'Y'
+        },
+        $inc: { no_of_trips: 1 },
         $push: { 
             trips_info: {
                 'pick-up': {
-                    localtion_id: 117,
+                    location_id: 117,
                     location_name: "Tuileries Garden",
                     intended_datetime: "10/08/2024 08:00",
                     actual_datetime: "10/08/2024 08:00"
                 },
                 'drop-off': {
-                    localtion_id: 118,
+                    location_id: 118,
                     location_name: "Sainte-Chapelle",
                     intended_datetime: "10/08/2024 10:00",
                     actual_datetime: "10/08/2024 10:00"
                 }
             }
         }
-    }
+    },
+    { upsert: true }
 );
 
 // Illustrate/confirm changes made
